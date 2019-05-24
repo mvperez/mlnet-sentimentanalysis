@@ -6,13 +6,15 @@ open Microsoft.ML
 open Shared.Models.MLModel
 open Shared
 
+let baseDirectory = __SOURCE_DIRECTORY__
+let baseDirectory' = Directory.GetParent(baseDirectory)
 
 let appPath = Path.GetDirectoryName(Environment.GetCommandLineArgs().[0])
 
-let baseDatasetsLocation = @"../../../../MLData"
+let baseDatasetsLocation = Path.Combine(baseDirectory'.FullName, "MLData")
 let dataPath = sprintf @"%s/yelp_labelled.tsv" baseDatasetsLocation
 
-let baseModelsPath = @"../../../../MLData";
+let baseModelsPath = Path.Combine(baseDirectory'.FullName, "MLData")
 let modelPath = sprintf @"%s/SentimentModel.zip" baseModelsPath
 
 let absolutePath relativePath = 

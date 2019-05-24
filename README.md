@@ -1,4 +1,9 @@
-# Sample usage of web api from POSTMAN
+# Build and Train Model
+CD to `Console` folder then execute the project `dotnet run`. This will save the trained model into filename `MLData\SentimentModel.zip`. The zip file will be use by the web api.
+
+# Sample usage of web api
+
+Run the web api
 
 ### Request
 ```
@@ -20,3 +25,4 @@ Server: Kestrel
 Transfer-Encoding: chunked
 {"text":"Machine learning is fun","probabilty":0.9732384,"prediction":true,"score":8.984151}
 ```
+
